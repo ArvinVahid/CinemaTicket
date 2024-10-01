@@ -29,10 +29,7 @@ namespace CinemaTicket.Data.Repo
 
         public List<CinamaSanse> CinemasFromMovie(string movieName)
         {
-            return Query.Include(m => m.Movie)
-                        .Include(s => s.Salon)
-                        .Where(m => m.Movie.Name == movieName)
-                        .Where(s => s.Salon.Id == s.SalonId)
+            return Query.Where(m => m.Movie.Name == movieName)
                         .Select(m => new CinamaSanse
                         {
                             CinemaId = m.Salon.CinemaId,
@@ -59,7 +56,7 @@ namespace CinemaTicket.Data.Repo
 
         public List<MovieSans> MoviesFromCinema(string cinemaName)
         {
-            return Query.Include(x => x.Salon.Cinema)
+            return Query//.Include(x => x.Salon.Cinema)
                         .Where(x => x.Salon.Cinema.Name == cinemaName)
                         .Select(x => new MovieSans
                         {
