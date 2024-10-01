@@ -40,6 +40,14 @@ namespace CinemaTicket
             builder.Services.AddScoped<IReservationService, ReservationService>();
             builder.Services.AddScoped<IReservationRepo, ReservationRepo>();
 
+            builder.Services.AddScoped<IReservedSeatService, ReservedSeatService>();
+            builder.Services.AddScoped<IReservedSeatRepo, ReservedSeatRepo>();
+
+            builder.Services.AddScoped<ISeatRepo, SeatRepo>();
+            builder.Services.AddScoped<ISeatService, SeatService>();
+
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

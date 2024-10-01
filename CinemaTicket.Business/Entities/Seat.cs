@@ -9,6 +9,7 @@ namespace CinemaTicket.Business.Entities
     public class Seat : BaseEntity
     {
         public int SeatNumber { get; set; }
+        public int SeatRow { get; set; }
         public int SalonId { get; set; }
 
         public Salon Salon { get; set; }
