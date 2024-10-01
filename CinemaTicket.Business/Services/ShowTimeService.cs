@@ -17,27 +17,17 @@ namespace CinemaTicket.Business.Services
 
         public List<Cinema> CinemasFromMovie(int movieId)
         {
-            throw new NotImplementedException();
+            return _repo.CinemasFromMovie(movieId);
         }
 
         public List<CinamaSanse> CinemasFromMovie(string movieName)
         {
-            throw new NotImplementedException();
+            return _repo.CinemasFromMovie(movieName);
         }
 
         public bool IsShowTimeExists(int id)
         {
             return _repo.IsShowTimeExists(id);
-        }
-
-        public List<Cinema> MovieInCinemas(int movieId)
-        {
-            return _repo.CinemasFromMovie(movieId);
-        }
-
-        public List<CinamaSanse> MovieInCinemas(string movieName)
-        {
-            return _repo.CinemasFromMovie(movieName);
         }
 
         public List<MovieSans> MoviesFromCinema(int cinemaId)

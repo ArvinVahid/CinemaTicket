@@ -20,8 +20,7 @@ namespace CinemaTicket.UI.Controllers
         [HttpGet("GetById")]
         public ActionResult GetShowTime(int id)
         {
-            _showTimeService.GetEntityById(id);
-            return Ok();
+            return Ok(_showTimeService.GetEntityById(id));
         }
 
         [HttpGet("GetAll")]
